@@ -33,7 +33,7 @@ export const Header = () => {
         {/* Botão para Menu Mobile */}
         <button
           onClick={toggleMenu}
-          className="sm:hidden block text-center mx-auto"
+          className="sm:hidden block text-center mx-auto hover:cursor-pointer mt-0.5"
         >
           <Menu />{" "}
         </button>

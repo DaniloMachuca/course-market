@@ -1,3 +1,6 @@
+import CourseCard from "@/components/CourseCard";
+import { cursos } from "@/data/data";
+
 const Home = () => {
   return (
     <main>
@@ -5,6 +8,9 @@ const Home = () => {
         <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">
           Cursos em Destaque
         </h2>
+        <div>
+          <CourseCard course={cursos[1]} />
+        </div>
       </div>
     </main>
   );
