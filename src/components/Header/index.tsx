@@ -12,14 +12,14 @@ export const Header = () => {
 
   return (
     <header className="bg-primary text-white p-4">
-      <div className="container mx-auto sm:flex justify-between items-center text-center">
-        <Link href="/" className="text-2xl font-bold">
+      <div className="container max-w-6xl mx-auto sm:flex justify-between items-center text-center">
+        <Link href="/" className="text-3xl font-bold">
           Marketplace
         </Link>
 
         {/* Menu Desktop */}
-        <nav className="hidden sm:flex space-x-6">
-          <Link href="/cursos" className="hover:underline">
+        <nav className="hidden sm:flex space-x-6 font-bold">
+          <Link href="/courses" className="hover:underline">
             Cursos
           </Link>
           <Link href="/meus-cursos" className="hover:underline">
