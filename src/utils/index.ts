@@ -20,5 +20,4 @@ export const BackEnd: Course[] = getCoursesByCategory("Back-end");
 export const Design: Course[] = getCoursesByCategory("Design");
 export const BancoDeDados: Course[] = getCoursesByCategory("Banco de Dados");
 export const Infraestrutura: Course[] = getCoursesByCategory("Infraestrutura");
-export const Cibersegurança: Course[] = getCoursesByCategory("Cibersegurança");
-export const Ferramentas: Course[] = getCoursesByCategory("Ferramentas");
+export const Ciberseguranca: Course[] = getCoursesByCategory("Cibersegurança");
