@@ -1,13 +1,7 @@
-import Courses from "@/sections/Courses";
-import Intro from "@/sections/Intro";
+import { redirect } from "next/navigation";
 
-const Home = () => {
-  return (
-    <main className="min-h-screen">
-      <Intro />
-      <Courses />
-    </main>
-  );
+const idk = () => {
+  redirect("/home");
 };
 
-export default Home;
+export default idk;

@@ -3,34 +3,24 @@
 import Image from "next/image";
 import { parseToBRL } from "@/utils";
 import { useRouter } from "next/navigation";
-import { Star } from "@geist-ui/icons";
-import { useState } from "react";
+import { Course } from "@/data/data";
+import FavStar from "../FavStar";
 
 type Props = {
-  course: {
-    id: string;
-    title: string;
-    image: string;
-    price: number;
-    category: string;
-  };
+  course: Course;
 };
 
 const CourseCard = ({ course }: Props) => {
   const router = useRouter();
+
   const handleClick = () => {
-    router.replace(`/courses/${course.id}`);
+    router.replace(`/home/courses/${course.id}`);
   };
-  const hadleClickFav = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    console.log("favoritado");
-  };
+
   const handleClickBtn = (e: React.MouseEvent) => {
     e.stopPropagation();
     console.log("buttonado");
   };
-
-  const [hover, setHover] = useState(false);
 
   return (
     <div
@@ -46,12 +36,9 @@ const CourseCard = ({ course }: Props) => {
           className="w-full h-auto object-cover"
         />
         <h3 className="text-xl font-semibold mt-4 mb-2">{course.title}</h3>
-        <Star
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-          color={hover ? "#ebc634" : ""}
-          className="absolute top-0 right-0"
-          onClick={hadleClickFav}
+        <FavStar
+          className="absolute top-0 right-0 transition-colors duration-150"
+          course={course}
         />
       </div>
       <p className="text-sm text-gray-500 mb-2">{course.category}</p>

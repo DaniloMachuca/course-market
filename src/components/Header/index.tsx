@@ -13,19 +13,19 @@ export const Header = () => {
   return (
     <header className="bg-primary text-white p-4">
       <div className="container max-w-6xl mx-auto sm:flex justify-between items-center text-center">
-        <Link href="/" className="text-3xl font-bold">
+        <Link href="/home" className="text-3xl font-bold">
           Marketplace
         </Link>
 
         {/* Menu Desktop */}
         <nav className="hidden sm:flex space-x-6 font-bold">
-          <Link href="/courses" className="hover:underline">
+          <Link href="/home/courses" className="hover:underline">
             Cursos
           </Link>
-          <Link href="/meus-cursos" className="hover:underline">
+          <Link href="/home/meus-cursos" className="hover:underline">
             Meus Cursos
           </Link>
-          <Link href="/favoritos" className="hover:underline">
+          <Link href="/home/favorites" className="hover:underline">
             Favoritos
           </Link>
         </nav>
@@ -43,13 +43,17 @@ export const Header = () => {
       <nav className={`sm:hidden ${menuOpen ? "block" : "hidden"} mt-4`}>
         <ul className="flex flex-col space-y-4 items-center">
           <li>
-            <Link href="/cursos" onClick={toggleMenu} className="block text-xl">
+            <Link
+              href="/home/cursos"
+              onClick={toggleMenu}
+              className="block text-xl"
+            >
               Cursos
             </Link>
           </li>
           <li>
             <Link
-              href="/meus-cursos"
+              href="/home/meus-cursos"
               onClick={toggleMenu}
               className="block text-xl"
             >
@@ -58,7 +62,7 @@ export const Header = () => {
           </li>
           <li>
             <Link
-              href="/favoritos"
+              href="/home/favoritos"
               onClick={toggleMenu}
               className="block text-xl"
             >

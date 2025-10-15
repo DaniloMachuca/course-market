@@ -3,6 +3,7 @@ import { getCourseById } from "@/utils/";
 import { parseToBRL } from "@/utils/";
 import { getCoursesByCategory } from "@/utils/";
 import CourseCard from "@/components/CourseCard";
+import FavStar from "@/components/FavStar";
 
 const CoursePage = async (props: { params: Promise<{ id: string }> }) => {
   const params = await props.params;
@@ -27,7 +28,10 @@ const CoursePage = async (props: { params: Promise<{ id: string }> }) => {
         </div>
         <div className="flex flex-col">
           <img className="mb-4" src={course.image} alt={course.title} />
-          <span className="mb-4 text-2xl">{parseToBRL(course.price)}</span>
+          <div className="mb-8 flex justify-between">
+            <span className="text-2xl">{parseToBRL(course.price)}</span>
+            <FavStar course={course} />
+          </div>
           <button className="bg-primary text-white py-2 px-4 rounded mt-4 hover:bg-primary-dark cursor-pointer">
             Comprar
           </button>
