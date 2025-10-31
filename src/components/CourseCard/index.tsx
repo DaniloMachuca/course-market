@@ -5,6 +5,8 @@ import { parseToBRL } from "@/utils";
 import { useRouter } from "next/navigation";
 import { Course } from "@/data/data";
 import FavStar from "../FavStar";
+import { useDispatch } from "react-redux";
+import { add } from "@/store/reducers/cart";
 
 type Props = {
   course: Course;
@@ -12,6 +14,7 @@ type Props = {
 
 const CourseCard = ({ course }: Props) => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     router.replace(`/home/courses/${course.id}`);
@@ -19,7 +22,7 @@ const CourseCard = ({ course }: Props) => {
 
   const handleClickBtn = (e: React.MouseEvent) => {
     e.stopPropagation();
-    console.log("buttonado");
+    dispatch(add(course));
   };
 
   return (

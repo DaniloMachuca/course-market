@@ -22,11 +22,11 @@ export const Header = () => {
           <Link href="/home/courses" className="hover:underline">
             Cursos
           </Link>
-          <Link href="/home/meus-cursos" className="hover:underline">
-            Meus Cursos
-          </Link>
           <Link href="/home/favorites" className="hover:underline">
             Favoritos
+          </Link>
+          <Link href="/home/cart" className="hover:underline">
+            Carrinho
           </Link>
         </nav>
 
@@ -53,20 +53,20 @@ export const Header = () => {
           </li>
           <li>
             <Link
-              href="/home/meus-cursos"
-              onClick={toggleMenu}
-              className="block text-xl"
-            >
-              Meus Cursos
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/home/favoritos"
               onClick={toggleMenu}
               className="block text-xl"
             >
               Favoritos
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/home/cart"
+              onClick={toggleMenu}
+              className="block text-xl"
+            >
+              Carrinho
             </Link>
           </li>
         </ul>

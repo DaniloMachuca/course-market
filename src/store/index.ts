@@ -11,6 +11,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import favReducer from "./reducers/favorites";
+import cartReducer from "./reducers/cart";
 
 // Config do persist
 const persistConfig = {
@@ -24,6 +25,7 @@ const persistedReducer = persistReducer(persistConfig, favReducer);
 const store = configureStore({
   reducer: {
     fav: persistedReducer,
+    cart: cartReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
