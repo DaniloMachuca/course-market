@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { RootReducer } from "@/store";
 import Link from "next/link";
 import { parseToBRL } from "@/utils";
+import { redirect } from "next/navigation";
 
 const CartPage = () => {
   const { list } = useSelector((state: RootReducer) => state.cart);
@@ -44,8 +45,11 @@ const CartPage = () => {
             Resumo da compra
           </h3>
           <p className="text-2xl mb-8">Valor total: {parseToBRL(total)}</p>
-          <button className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark cursor-pointer hover:cursor-pointer transition-colors duration-300">
-            Finalizar compra
+          <button
+            onClick={() => redirect("/home/cart/checkout")}
+            className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark cursor-pointer hover:cursor-pointer transition-colors duration-300"
+          >
+            Ir para o checkout
           </button>
         </aside>
       )}
